@@ -121,5 +121,3 @@ The master receives the slave's transmissions through a single D flip-flop in an
 When the slave transmits a `0100` pattern, the rising edge at the start of clock period 5 clocks the constant 1 into the flip-flop's Q output, where it persists until the next reset. When the slave transmits a `0000` pattern, no rising edge occurs and Q remains 0.
 
 This mechanism captures the slave's edge regardless of small variations in arrival time, providing tolerance of up to approximately 1/8 of a bit-frame for the slave's signal delay. At 16 Mbit/s with a 128 MHz PLL, this corresponds to roughly 1.5 metres of cable propagation, allowing the protocol to operate over moderate cable lengths without explicit delay calibration.
-
-## Repository structure
