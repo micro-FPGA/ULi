@@ -23,7 +23,7 @@ This repository contains the protocol specification, VHDL reference implementati
 | Clock recovery | Standard FPGA PLL with blanking mechanism |
 | Auto-alignment | Tolerates slave-side delay up to 1/8 of a bit-frame |
 | Cable length (reference) | ~1.5 m at 16 Mbit/s without calibration |
-| License | MIT |
+| License | Dual License MIT or commercial |
 
 ## Why ULi exists
 
