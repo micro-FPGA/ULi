@@ -15,7 +15,7 @@ This repository contains the protocol specification, VHDL reference implementati
 | Frame size | 8 clock periods |
 | Master payload per frame | 2 bits (1 control, 1 data) |
 | Slave payload per frame | 1 bit (data) |
-| Master raw rate | 2 × clock_frequency / 8 |
+| Master raw rate | clock_frequency / 8 |
 | Slave raw rate | clock_frequency / 8 |
 | Reference rates at 128 MHz PLL | 32 Mbit/s master, 16 Mbit/s slave |
 | Superframe size | 128 frames |
