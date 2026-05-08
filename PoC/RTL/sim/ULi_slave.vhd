@@ -77,7 +77,7 @@ process(clk_in, resetn)
         if resetn='0' then
             count_reg <= (others => '0');
             clk_en <= '0';
-        elsif rising_edge(clk_in) then
+        elsif falling_edge(clk_in) then
             clk_prev <= clkdiv8_in; -- Save divided clock
             if (clk_prev = '0') and (clkdiv8_in = '1') then
                 count_reg <= (others => '0');
@@ -108,7 +108,7 @@ process(clk_in,locked)
             ULi_t <= '0';
             ULi_o <= '0';
         else 
-            if falling_edge(clk_in) then
+            if rising_edge(clk_in) then
                 ULi_t <= not clk_en;
                 if (count_reg = 4) and (data_in = '1') then
                     ULi_o <= '1';
@@ -120,9 +120,6 @@ process(clk_in,locked)
             end if;
         end if;
     end process;
-
-
-
 
 
 

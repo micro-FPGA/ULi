@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x4FF460388DD942EC",
+      "boundary_crc": "0x4FF460389495F6E2",
       "device": "xc7s25ftgb196-1",
       "gen_directory": "../../../../ULi.gen/sources_1/bd/pl_sys",
       "name": "pl_sys",
@@ -44,7 +44,7 @@
             "value_src": "default"
           },
           "PHASE": {
-            "value": "180.0",
+            "value": "0.0",
             "value_src": "ip_prop"
           }
         }
@@ -244,7 +244,7 @@
             "value": "160.000"
           },
           "CLKOUT1_REQUESTED_PHASE": {
-            "value": "180.000"
+            "value": "0.000"
           },
           "CLKOUT2_JITTER": {
             "value": "827.152"
@@ -271,7 +271,7 @@
             "value": "4.000"
           },
           "MMCM_CLKOUT0_PHASE": {
-            "value": "180.000"
+            "value": "0.000"
           },
           "MMCM_CLKOUT1_DIVIDE": {
             "value": "32"
@@ -317,7 +317,7 @@
                 "value_src": "ip_prop"
               },
               "PHASE": {
-                "value": "180.0",
+                "value": "0.0",
                 "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
