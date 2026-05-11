@@ -49,14 +49,14 @@ Data is transmitted in 8-clock-period frames divided into two halves:
 
 | Clock period | Direction |
 |--------------|-----------|
-| 0 | Master transmit |
-| 1 | Master transmit |
-| 2 | Master transmit |
-| 3 | Master transmit |
-| 4 | Slave transmit |
-| 5 | Slave transmit |
-| 6 | Slave transmit |
-| 7 | Slave transmit |
+| 0 | Master transmit 1 |
+| 1 | Master transmit 0 or 1 |
+| 2 | Master transmit 0 or 1 |
+| 3 | Master transmit 0 |
+| 4 | Slave transmit 0 |
+| 5 | Slave transmit 0 or 1 |
+| 6 | Slave transmit 0 |
+| 7 | idle (weak pull low |
 
 Master and slave never transmit simultaneously.
 
