@@ -17,7 +17,7 @@ This repository contains the protocol specification, VHDL reference implementati
 | Slave payload per frame | 1 bit (data) |
 | Master raw rate | clock_frequency / 8 |
 | Slave raw rate | clock_frequency / 8 |
-| Reference rates at 128 MHz PLL | 32 Mbit/s master, 16 Mbit/s slave |
+| Reference rates at 128 MHz PLL | 16 Mbit/s master, 16 Mbit/s slave |
 | Superframe size | 128 frames |
 | Effective data rate after sync overhead | 127/128 of raw data rate |
 | Clock recovery | Standard FPGA PLL with blanking mechanism |
