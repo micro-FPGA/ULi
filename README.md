@@ -39,7 +39,7 @@ ULi was designed to fill a specific gap: a protocol that combines all of the fol
 - Implementable with modest FPGA resource consumption
 - Explicit framing through a dedicated control bit, eliminating the need to embed sync into the data channel
 
-The protocol was conceived in 2016. Initial hardware testing verified the link-layer concept. The implementation in this repository was developed in 2026 and demonstrates the link layer working bidirectionally in simulation.
+The protocol was conceived in 2016. Initial hardware testing verified the link-layer concept. The implementation in this repository was developed in 2026 and demonstrates the link layer working bidirectionally in simulation and over physical connection between two FPGA pins.
 
 ## Protocol overview
 
