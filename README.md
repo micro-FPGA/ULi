@@ -87,10 +87,10 @@ Both patterns begin with the line at 0 (continuing from the master's transmissio
 
 ### Superframe and synchronisation
 
-A **superframe** consists of 128 ULi frames. The control bit transmitted by the master indicates which frame within the superframe is the first frame:
+A **superframe** consists of 129 ULi frames. The control bit transmitted by the master indicates which frame within the superframe is the first frame:
 
 - **First frame of superframe**: control=1, data=0 (master pattern `1000`)
-- **Other 127 frames**: control=0, data is free (master pattern `1100` or `1110`)
+- **Other 128 frames**: control=0, data is free (master pattern `1100` or `1110`)
 
 This provides explicit superframe synchronisation without requiring sync patterns to be embedded into the data channel. The receiver detects the control bit on each frame and identifies the start of each superframe directly. Frame counting within the superframe runs from 0 to 127 with the wraparound at frame 0 (the sync frame).
 
