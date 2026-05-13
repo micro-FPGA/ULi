@@ -92,9 +92,11 @@ A **superframe** consists of 129 ULi frames. The control bit transmitted by the 
 - **First frame of superframe**: control=1, data=0 (master pattern `1000`)
 - **Other 128 frames**: control=0, data is free (master pattern `1100` or `1110`)
 
-This provides explicit superframe synchronisation without requiring sync patterns to be embedded into the data channel. The receiver detects the control bit on each frame and identifies the start of each superframe directly. Frame counting within the superframe runs from 0 to 127 with the wraparound at frame 0 (the sync frame).
+This provides explicit superframe synchronisation without requiring sync patterns to be embedded into the data channel. The receiver detects the control bit on each frame and identifies the start of each superframe directly. Frame counting within the superframe runs from 0 to 128 with the wraparound at frame 0 (the sync frame).
 
-The cost of this synchronisation is that data bit 1 cannot be sent on the sync frame. The effective data rate on the master's data channel is 127/128 of the raw rate, or approximately 15.875 Mbit/s at 128 MHz PLL. The slave's data rate is unaffected by superframe synchronisation, since the slave does not have a control bit; the slave's data rate is the full 16 Mbit/s.
+The cost of this synchronisation is that data bit 1 cannot be sent on the sync frame. The effective data rate on the master's data channel is 128/129 of the raw rate, or approximately 19.85 Mbit/s at 160 MHz PLL. The slave's data rate is the same, in the sync slot slave is transmitting fixed 1 as link loss indicator.
+
+Different other framing methods can be used. It is also possible to use ULi physical link as bidrectional UART without any framing.
 
 Higher protocol layers can use the superframe boundary for purposes such as:
 
@@ -120,4 +122,4 @@ The master receives the slave's transmissions through a single D flip-flop in an
 
 When the slave transmits a `0100` pattern, the rising edge at the start of clock period 5 clocks the constant 1 into the flip-flop's Q output, where it persists until the next reset. When the slave transmits a `0000` pattern, no rising edge occurs and Q remains 0.
 
-This mechanism captures the slave's edge regardless of small variations in arrival time, providing tolerance of up to approximately 1/8 of a bit-frame for the slave's signal delay. At 16 Mbit/s with a 128 MHz PLL, this corresponds to roughly 1.5 metres of cable propagation, allowing the protocol to operate over moderate cable lengths without explicit delay calibration.
+This mechanism captures the slave's edge regardless of small variations in arrival time, providing tolerance of up to approximately 1/8 of a bit-frame for the slave's signal delay. At 16 Mbit/s with a 128 MHz PLL, this corresponds to roughly 1.0 metres of cable propagation, allowing the protocol to operate over moderate cable lengths without explicit delay calibration.
