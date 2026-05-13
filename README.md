@@ -2,7 +2,7 @@
 
 **A single-wire bidirectional clock-synchronous communication protocol for FPGAs.**
 
-ULi enables full-duplex data transfer between two FPGA endpoints over a single electrical wire, using a clock-synchronous frame structure that can be recovered with standard FPGA PLL hardware. The master transmits 2 bits per frame (1 control + 1 data), the slave transmits 1 data bit per frame. Raw data rates of 16 Mbit/s in each direction are achievable at typical FPGA clock speeds, with the rate scaling linearly with the underlying clock frequency.
+ULi enables full-duplex data transfer between two FPGA endpoints over a single electrical wire, using a clock-synchronous frame structure that can be recovered with standard FPGA PLL hardware. The master transmits 2 bits per frame (1 control + 1 data), the slave transmits 1 data bit per frame. Raw data rates of 20 Mbit/s in each direction are achievable at typical FPGA clock speeds, with the rate scaling linearly with the underlying clock frequency.
 
 This repository contains the protocol specification, VHDL reference implementation, testbenches, and supporting documentation.
 
@@ -17,12 +17,12 @@ This repository contains the protocol specification, VHDL reference implementati
 | Slave payload per frame | 1 bit (data) |
 | Master raw rate | clock_frequency / 8 |
 | Slave raw rate | clock_frequency / 8 |
-| Reference rates at 128 MHz PLL | 16 Mbit/s master, 16 Mbit/s slave |
+| Reference rates at 128 MHz PLL | 20 Mbit/s master, 20 Mbit/s slave |
 | Superframe size | 128 frames |
 | Effective data rate after sync overhead | 127/128 of raw data rate |
 | Clock recovery | Standard FPGA PLL with blanking mechanism |
 | Auto-alignment | Tolerates slave-side delay up to 1/8 of a bit-frame |
-| Cable length (reference) | ~1.5 m at 16 Mbit/s without calibration |
+| Cable length (reference) | ~1.0 m at 20 Mbit/s without calibration |
 | License | Dual License MIT or commercial |
 
 ## Why ULi exists
